@@ -1,7 +1,13 @@
 var countPlayers = 0
 var emptyInputs = 0
-var playerName = []
-var playerPoints = []
+var players = []
+
+class Player{
+    constructor(playerName, playerPoints){
+        this.playerName = playerName
+        this.playerPoints = playerPoints
+    }
+}
 
 //Choosing number of players
 function game(x){
@@ -27,11 +33,10 @@ function startGame(){
             inputsReset()
         } else {
             var playerNames = document.createElement('p')
-            playerName.push(getInputId.value) //pushnem meno do array
-            playerPoints.push(0) // pushnem 0 bodov pre kazdeho hraca do array
-            playerNames.innerText = playerName[j] + ' ' + playerPoints[j] + 'b'
+            playerNames.setAttribute('id', 'playerNumber-' + j)
+            players.push(new Player(getInputId.value, 0))
+            playerNames.innerText = players[j].playerName + ' - ' + players[j].playerPoints + 'b'
             $('#playerLayout').append(playerNames)
-            document.getElementById('playerTurn').innerText = playerName[0]
         }
     }
     if(emptyInputs > 0){
@@ -40,6 +45,7 @@ function startGame(){
         $('.intro').css('display', 'none')
         $('.set-names').css('display', 'none')
         $('.gameplay').css('display', 'block')
+        document.getElementById('playerTurn').innerText =  players[0].playerName
     }
 }
 

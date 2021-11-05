@@ -3,16 +3,20 @@ var myCanvas = document.getElementById('cube') //canvas get
 var ctx = myCanvas.getContext('2d') // canvas pen
 ctx.fillStyle = 'black' // canvas pen color
 const circle = 2 * Math.PI
-var cubeSpeed = 0;
-var cubeNumber; //NEPOUZITA PREMENNA -> je to cislo ktore spadlo na kocke premenim ho na body
+var cubeSpeed = 0
+var cubeNumber
+var cubeUsable = true
 
 cube.addEventListener('click', ()=>{
-    cubeUse()
+    if(cubeUsable == true){
+        clearGamePlace() //clears game place when cube is working-> cards, tasks etc.
+        cubeUse()
+        cubeUsable = false // FIXNUT NA FALSE !!!!!!!!!!!!!!!!!!!!!!!!!
+    }
 })
 
 function cubeUse(){
-        clearCanvas() //clears the canvas (cube)
-        clearGamePlace() //clears game place when cube is working-> cards, tasks etc.
+    clearCanvas() //clears the canvas (cube)
     switch (Math.floor(Math.random()*6 + 1)){
         case 1:
             draw(myCanvas.width/2, myCanvas.height/2, 20, 0, circle)

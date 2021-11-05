@@ -71,8 +71,7 @@ p{
 }
 
 #playerLayout{
-/*    background-color: rgba(228, 136, 15, 0.2);
-*/  text-align: center;
+    text-align: center;
     background-color: rgba(255, 255, 255, 0.4);
     padding: 20px;
 }
@@ -91,7 +90,7 @@ input{
 }
 
 input:focus{
-    background-color: rgb(165, 84, 26);
+    background: linear-gradient(-45deg, rgba(210,105,30,0) 20%, rgba(210,105,30,1) 100%);
     border-radius: 20px 0px 20px 0px;
     transition: 0.5s;
 }
@@ -110,6 +109,19 @@ input:hover{
     position: relative;
     width: 100%;
     height: 100vh;
+}
+
+.progress-container{
+    width: 100%;
+    position: absolute;
+    margin-top: 2rem;
+}
+
+.progress{
+    position: relative;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .players{
@@ -182,7 +194,7 @@ canvas{
 
 /*Easy tasks text*/ 
 
-div > h2{
+#task-1{
     display: none;
     position: relative;
     top: 50%;
@@ -200,42 +212,80 @@ div > h2{
     margin: 10px;
     border-radius: 10px;
     position: relative;
+    left: 0px;
     top: 10%;
     border: 1px solid black;
-    background-color: black;
-}
-
-#task-card{
-    background-color: rgb(255,0,0,1);
+    background-color: rgba(252,61,61,1);
 }
 
 div > .fas{
     font-size: 3rem;
-    color: rgb(102, 153, 255);
-    text-shadow: 2px 2px 5px black;
+    color: black;
+}
+
+@keyframes flash{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.far{
+    color: rgba(252,61,61,1);
+    text-shadow: 2px 2px 2px black;
+    animation-name: flash;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.challenge-complete-button{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
 }
 
 #challenge-card:hover, #task-card:hover, #fact-card:hover{
     transform: translateY(5px);
     transition: 0.5s;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 #preparation-text{
     font-size: 3rem;
     text-align: center;
-    color: rgb(255, 230, 230);
+    color: red;
 }
 
-#preparation-box{
+#preparation-box, #challenge-container{
+    text-shadow: 2px 2px 5px black;
     display: none;
     position: relative;
     top: 50%;
 }
 
+#challenge-container{
+    font-size: 3rem;
+}
+
+#cards-container{
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50%;
+    display: none;
+    width: 100%;
+    height: 10vh;
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+    border: 2px 0px 2px 0px solid black;
+}
+
+#cards-container > .fas{
+    margin-top: -1.5rem;
+    color: rgba(252,61,61,1);
+    display: none;
+}
+
 @media only screen and (max-width: 1300px) {
-    button{
+    .btn-warning{
         width: 50%;
     }
     .style-1{
@@ -250,9 +300,7 @@ div > .fas{
         text-align:left;
         margin: -1vh; /*TOTO TREBA FIXNUT ABY NEBOLA ZAPORNA HODNOTA ale vymysliet iny sposob, JE TO SPOSOBENE DISPLEJ BLOCKK*/
     }
-    div > h2, #preparation-text{
-        font-size: 20px;
-    }
+   
 #challenge-card, #task-card, #fact-card{
     padding: 40px 20px;
     width: 6rem;
