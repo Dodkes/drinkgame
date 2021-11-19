@@ -40,7 +40,7 @@ function firstCategory(){
 
 function secondCategory(){
 	$('#challenge-container').css('display', 'none')
-	$('#task-1').css('display', 'none') //show first category question
+	$('#task-1').css('display', 'none')
 	$('[card]').css('display', 'inline-block') //show cards
 }
 
@@ -90,6 +90,8 @@ function orderPlayer(){
 function updateDisplay(){
 	var rewrite = document.getElementById('playerNumber-' + playerOrder)
 	rewrite.innerText = players[playerOrder].playerName + ' - ' + players[playerOrder].playerPoints + 'b'
+	console.log(players[playerOrder].playerName)
+
 }
 
 //SWITCH LEFT DIV
@@ -104,17 +106,18 @@ function switchPlayer(){
 }
 //CARDS-------------------------------------------
 function duelGame(){
-	orderPlayer()
-	switchPlayer()
-	cardSelectDisplay() // function for showing cards only
+	cardSelectDisplay() // function for hiding all cards only
 	$('.fa-american-sign-language-interpreting').css('display', 'block')
 	var duelPlayer = players[Math.floor(Math.random() * players.length)].playerName
-	while(duelPlayer == players[switchCase].playerName){
+	while(duelPlayer == players[playerOrder].playerName){
 		var duelPlayer = players[Math.floor(Math.random() * players.length)].playerName
-		console.log(duelPlayer)
-		console.log(players[switchCase].playerName)
+		console.log(players[playerOrder].playerName)
 	}
 	cardsText.innerText =  duel[Math.floor(Math.random() * duel.length)] + ' s hráčom ' + duelPlayer
+	$('[winner-button-1]').css('display', 'inline-block').text(players[playerOrder].playerName)
+	$('[winner-button-2]').css('display', 'inline-block').text(duelPlayer)
+	orderPlayer()
+	switchPlayer()
 }
 
 function task(){
@@ -140,7 +143,7 @@ function cardSelectDisplay(){
 	$('.fa-american-sign-language-interpreting').css('display', 'none')
 	$('.fa-theater-masks').css('display', 'none')
 	$('[card]').css('display', 'none')
-	$('#cards-container').css('display', 'block') //display none pre kategoriu s kartami
+	$('#cards-container').css('display', 'block') //display none pouzit pre aby zmizlit kartove ulohy
 }
 //CARDS-------------------------------------------
 

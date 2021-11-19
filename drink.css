@@ -284,6 +284,11 @@ div > .fas{
     display: none;
 }
 
+.btn-dark, .btn-danger{
+    padding: 10px 20px;
+    margin: 50px 10px;
+}
+
 @media only screen and (max-width: 1300px) {
     .btn-warning{
         width: 50%;

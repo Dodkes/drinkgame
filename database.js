@@ -20,13 +20,16 @@ const questions = [
 
 const duel = [
     'Strihanie',
-    'Pozeranie do očí',
+    'Kto skôr žmurkne',
     'Palcová hra',
     'Pretláčanie rukou',
 ]
 
 const tasks = [
-    'Odpľuj si',
+    'Vypi',
+    'Prines 3 žlté predmety',
+    'Vyzleč si čokoľvek, čo máš na sebe',
+    'Vyber si hráča s ktorým si vymeníš čokoľvek čo máte na sebe 1 za 1',
 ]
 
 const facts = [
@@ -41,4 +44,5 @@ const challengeTasks = [
     'Vyzuj si oboje ponožky',
     'Vymenuj akékoľvek 4 hlavné mestá',
     'Vymenuj 5 mien na písmeno P',
+    'Vypi',
 ]
