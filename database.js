@@ -43,6 +43,7 @@ const facts = [
 const challengeTasks = [
     'Vyzuj si oboje ponožky',
     'Vymenuj akékoľvek 4 hlavné mestá',
+    'Vymenuj akékoľvek 4 európske hlavné mestá',
     'Vymenuj 5 mien na písmeno P',
     'Vypi',
 ]

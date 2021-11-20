@@ -89,9 +89,7 @@ function orderPlayer(){
 
 function updateDisplay(){
 	var rewrite = document.getElementById('playerNumber-' + playerOrder)
-	rewrite.innerText = players[playerOrder].playerName + ' - ' + players[playerOrder].playerPoints + 'b'
-	console.log(players[playerOrder].playerName)
-
+	rewrite.innerText = players[playerOrder].playerName + ' : ' + players[playerOrder].playerPoints + 'b'
 }
 
 //SWITCH LEFT DIV
@@ -108,16 +106,39 @@ function switchPlayer(){
 function duelGame(){
 	cardSelectDisplay() // function for hiding all cards only
 	$('.fa-american-sign-language-interpreting').css('display', 'block')
-	var duelPlayer = players[Math.floor(Math.random() * players.length)].playerName
-	while(duelPlayer == players[playerOrder].playerName){
-		var duelPlayer = players[Math.floor(Math.random() * players.length)].playerName
-		console.log(players[playerOrder].playerName)
+	var randomPlayer = Math.floor(Math.random() * players.length)
+	var duelPlayer = players[randomPlayer]
+	var duelPlayerName = duelPlayer.playerName
+	while(duelPlayerName == players[playerOrder].playerName){
+	var randomPlayer = Math.floor(Math.random() * players.length)
+	var duelPlayer = players[randomPlayer]
+	var duelPlayerName = duelPlayer.playerName
 	}
-	cardsText.innerText =  duel[Math.floor(Math.random() * duel.length)] + ' s hráčom ' + duelPlayer
+	cardsText.innerText =  duel[Math.floor(Math.random() * duel.length)] + ' s hráčom ' + duelPlayerName
+	//WINNER 1 BUTTON
 	$('[winner-button-1]').css('display', 'inline-block').text(players[playerOrder].playerName)
-	$('[winner-button-2]').css('display', 'inline-block').text(duelPlayer)
-	orderPlayer()
-	switchPlayer()
+	.click(()=>{
+		$('#cards-container').css('display', 'none') //display none pouzit pre aby zmizlit kartove ulohy
+		cubeUsable = true
+		duelPlayer.playerPoints -= cubeNumber
+		players[playerOrder].playerPoints += cubeNumber
+		var rewrite2 = document.getElementById('playerNumber-' + randomPlayer)
+		rewrite2.innerText = duelPlayerName + ' : ' + duelPlayer.playerPoints + 'b'
+		orderPlayer()
+		switchPlayer()
+	})
+	//WINNER 2 BUTTON
+	$('[winner-button-2]').css('display', 'inline-block').text(duelPlayerName)
+	.click(()=>{
+		$('#cards-container').css('display', 'none') //display none pouzit pre aby zmizlit kartove ulohy
+		cubeUsable = true
+		duelPlayer.playerPoints += cubeNumber
+		players[playerOrder].playerPoints -= cubeNumber
+		var rewrite2 = document.getElementById('playerNumber-' + randomPlayer)
+		rewrite2.innerText = duelPlayerName + ' : ' + duelPlayer.playerPoints + 'b'
+		orderPlayer()
+		switchPlayer()
+	})
 }
 
 function task(){

@@ -35,7 +35,7 @@ function startGame(){
             var playerNames = document.createElement('p')
             playerNames.setAttribute('id', 'playerNumber-' + j)
             players.push(new Player(getInputId.value, 0))
-            playerNames.innerText = players[j].playerName + ' - ' + players[j].playerPoints + 'b'
+            playerNames.innerText = players[j].playerName + ' : ' + players[j].playerPoints + 'b'
             $('#playerLayout').append(playerNames)
         }
     }
