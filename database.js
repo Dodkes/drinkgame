@@ -27,7 +27,6 @@ const duel = [
 
 const tasks = [
     'Vypi',
-    'Prines 3 žlté predmety',
     'Vyzleč si čokoľvek, čo máš na sebe',
     'Vyber si hráča s ktorým si vymeníš čokoľvek čo máte na sebe 1 za 1',
 ]
@@ -37,7 +36,7 @@ const facts = [
     'Kedy si sa prvykrát v živote opil?',
     'Skúsil si marihuanu?',
     'V koľkých rokoch si sa prvý krát opil?',
-    'Koľko frajeriek/ov si mal/a?',
+    'Koľko frajeriek/ov si mal/a vo svojom živote?',
 ]
 
 const challengeTasks = [
@@ -45,5 +44,6 @@ const challengeTasks = [
     'Vymenuj akékoľvek 4 hlavné mestá',
     'Vymenuj akékoľvek 4 európske hlavné mestá',
     'Vymenuj 5 mien na písmeno P',
+    'Prines akýkoľvek žltý predmet',
     'Vypi',
 ]

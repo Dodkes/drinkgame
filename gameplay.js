@@ -25,9 +25,7 @@ function gameplayFunction(){
 }
 
 function firstCategory(){
-	if(playerOrder == countPlayers){
-		playerOrder = 0
-	}
+	resetPlayerOrderVariable()
 	players[playerOrder].playerPoints += cubeNumber //TOTO PRIDAT DO FIRST CATEGORY -> RESP TAM KDE SA MAJU PRIDAT BODY
 	orderPlayer()
 	switchPlayer()
@@ -39,12 +37,14 @@ function firstCategory(){
 }
 
 function secondCategory(){
+	resetPlayerOrderVariable()
 	$('#challenge-container').css('display', 'none')
 	$('#task-1').css('display', 'none')
 	$('[card]').css('display', 'inline-block') //show cards
 }
 
 function thirdCategory(){
+	resetPlayerOrderVariable()
 	$('#challenge-container').css('display', 'none')
 	if(timer >= 0){
 		document.getElementById('preparation-text').innerText = timer
@@ -80,11 +80,13 @@ if(challengeBar >= 0){
 }
 //SWITCH TOP NAMES
 function orderPlayer(){
+	resetPlayerOrderVariable()
 	easyTask.style.color = 'white'
 	if(playerOrder < countPlayers) {
 		updateDisplay()
 		playerOrder++ 
 	}
+	resetPlayerOrderVariable()
 }
 
 function updateDisplay(){
@@ -142,6 +144,8 @@ function duelGame(){
 }
 
 function task(){
+	$('[winner-button-1]').css('display', 'none')
+	$('[winner-button-2]').css('display', 'none')
 	orderPlayer()
 	switchPlayer()
 	cardSelectDisplay()
@@ -151,6 +155,8 @@ function task(){
 }
 
 function fact(){
+	$('[winner-button-1]').css('display', 'none')
+	$('[winner-button-2]').css('display', 'none')
 	orderPlayer()
 	switchPlayer()
 	cardSelectDisplay()
@@ -160,14 +166,14 @@ function fact(){
 }
 
 function cardSelectDisplay(){
-	$('.fa-exclamation').css('display', 'none')
-	$('.fa-american-sign-language-interpreting').css('display', 'none')
-	$('.fa-theater-masks').css('display', 'none')
+	$('.exclamation').css('display', 'none')
+	$('.interpreting').css('display', 'none')
+	$('.mask').css('display', 'none')
 	$('[card]').css('display', 'none')
 	$('#cards-container').css('display', 'block') //display none pouzit pre aby zmizlit kartove ulohy
 }
-//CARDS-------------------------------------------
 
+//Challenge in-time button-------------------------------------------
 $('.challenge-complete-button').click(()=>{
 	clearTimeout(timeFunction)
 	players[playerOrder].playerPoints += cubeNumber
@@ -180,3 +186,19 @@ $('.challenge-complete-button').click(()=>{
 	easyTask.style.color = 'lightgreen'
 	$('#task-1').css('display', 'inline-block')
 })
+
+//SKUSOBNA FUNKCIA PROBLEM JE PLAYER ORDER KTORY JE O 1 VIAC AKO ARRAY s HRACMI
+$('body').click(()=>{
+	console.clear()
+	console.log('playerOrder is ' + playerOrder)
+}
+)
+
+function resetPlayerOrderVariable(){
+	if(playerOrder == countPlayers){ //countPlayers - 1
+		playerOrder = 0
+	}
+}
+//PROBLEM
+//v dueli zoberie 2x tolko bodov ako ma
+//prida pointy vsetkym ostatnym hracom (okrem prehraneho) nie len vitazovi
