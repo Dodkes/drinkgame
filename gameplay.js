@@ -104,44 +104,6 @@ function switchPlayer(){
 		}
 	}
 }
-//CARDS-------------------------------------------
-function duelGame(){
-	cardSelectDisplay() // function for hiding all cards only
-	$('.fa-american-sign-language-interpreting').css('display', 'block')
-	var randomPlayer = Math.floor(Math.random() * players.length)
-	var duelPlayer = players[randomPlayer]
-	var duelPlayerName = duelPlayer.playerName
-	while(duelPlayerName == players[playerOrder].playerName){
-	var randomPlayer = Math.floor(Math.random() * players.length)
-	var duelPlayer = players[randomPlayer]
-	var duelPlayerName = duelPlayer.playerName
-	}
-	cardsText.innerText =  duel[Math.floor(Math.random() * duel.length)] + ' s hráčom ' + duelPlayerName
-	//WINNER 1 BUTTON
-	$('[winner-button-1]').css('display', 'inline-block').text(players[playerOrder].playerName)
-	.click(()=>{
-		$('#cards-container').css('display', 'none') //display none pouzit pre aby zmizlit kartove ulohy
-		cubeUsable = true
-		duelPlayer.playerPoints -= cubeNumber
-		players[playerOrder].playerPoints += cubeNumber
-		var rewrite2 = document.getElementById('playerNumber-' + randomPlayer)
-		rewrite2.innerText = duelPlayerName + ' : ' + duelPlayer.playerPoints + 'b'
-		orderPlayer()
-		switchPlayer()
-	})
-	//WINNER 2 BUTTON
-	$('[winner-button-2]').css('display', 'inline-block').text(duelPlayerName)
-	.click(()=>{
-		$('#cards-container').css('display', 'none') //display none pouzit pre aby zmizlit kartove ulohy
-		cubeUsable = true
-		duelPlayer.playerPoints += cubeNumber
-		players[playerOrder].playerPoints -= cubeNumber
-		var rewrite2 = document.getElementById('playerNumber-' + randomPlayer)
-		rewrite2.innerText = duelPlayerName + ' : ' + duelPlayer.playerPoints + 'b'
-		orderPlayer()
-		switchPlayer()
-	})
-}
 
 function task(){
 	$('[winner-button-1]').css('display', 'none')
@@ -189,16 +151,34 @@ $('.challenge-complete-button').click(()=>{
 
 //SKUSOBNA FUNKCIA PROBLEM JE PLAYER ORDER KTORY JE O 1 VIAC AKO ARRAY s HRACMI
 $('body').click(()=>{
-	console.clear()
 	console.log('playerOrder is ' + playerOrder)
-}
-)
+})
 
 function resetPlayerOrderVariable(){
 	if(playerOrder == countPlayers){ //countPlayers - 1
 		playerOrder = 0
 	}
 }
-//PROBLEM
-//v dueli zoberie 2x tolko bodov ako ma
-//prida pointy vsetkym ostatnym hracom (okrem prehraneho) nie len vitazovi
+
+//CARDS-------------------------------------------
+function duelGame(){
+	cardSelectDisplay() // function for hiding all cards only
+	$('.fa-american-sign-language-interpreting').css('display', 'block')
+	var oponent = Math.floor(Math.random() * players.length)
+	while (oponent == playerOrder) {
+	var oponent = Math.floor(Math.random() * players.length)
+	}
+	$('[winner-button-1]').text(players[playerOrder].playerName)
+	$('[winner-button-2]').text(players[oponent].playerName)
+	cardsText.innerText = duel[Math.floor(Math.random() * duel.length)] + ' s hráčom ' + players[oponent].playerName
+
+}
+
+//First winner
+$('[winner-button-1]').click(()=>{
+	alert('Hrac 1 - challenger')
+})
+//Second winner
+$('[winner-button-2]').click(()=>{
+	alert('Hrac 2 - oponent')
+})
