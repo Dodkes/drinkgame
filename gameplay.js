@@ -6,6 +6,7 @@ var playerOrder = 0
 var switchCase = 1
 var challengeBar = 100
 var timeFunction
+var oponent
 //Choose 1 of 3 playing categories
 function gameplayFunction(){
 	$('#cards-container').css('display', 'none') //display none pre kategoriu s kartami
@@ -149,11 +150,6 @@ $('.challenge-complete-button').click(()=>{
 	$('#task-1').css('display', 'inline-block')
 })
 
-//SKUSOBNA FUNKCIA PROBLEM JE PLAYER ORDER KTORY JE O 1 VIAC AKO ARRAY s HRACMI
-$('body').click(()=>{
-	console.log('playerOrder is ' + playerOrder)
-})
-
 function resetPlayerOrderVariable(){
 	if(playerOrder == countPlayers){ //countPlayers - 1
 		playerOrder = 0
@@ -164,21 +160,39 @@ function resetPlayerOrderVariable(){
 function duelGame(){
 	cardSelectDisplay() // function for hiding all cards only
 	$('.fa-american-sign-language-interpreting').css('display', 'block')
-	var oponent = Math.floor(Math.random() * players.length)
+	oponent = Math.floor(Math.random() * players.length)
 	while (oponent == playerOrder) {
-	var oponent = Math.floor(Math.random() * players.length)
+	oponent = Math.floor(Math.random() * players.length)
 	}
 	$('[winner-button-1]').text(players[playerOrder].playerName)
 	$('[winner-button-2]').text(players[oponent].playerName)
 	cardsText.innerText = duel[Math.floor(Math.random() * duel.length)] + ' s hráčom ' + players[oponent].playerName
-
 }
 
 //First winner
 $('[winner-button-1]').click(()=>{
-	alert('Hrac 1 - challenger')
+	players[playerOrder].playerPoints += cubeNumber
+	players[oponent].playerPoints -= cubeNumber
+	updateDisplay()
+	updateOponentDisplay()
+	switchPlayer()
+	orderPlayer()
+	cubeUsable = true
+	$('#cards-container').css('display', 'none')
 })
 //Second winner
 $('[winner-button-2]').click(()=>{
-	alert('Hrac 2 - oponent')
+	players[playerOrder].playerPoints -= cubeNumber
+	players[oponent].playerPoints += cubeNumber
+	updateDisplay()
+	updateOponentDisplay()
+	switchPlayer()
+	orderPlayer()
+	cubeUsable = true
+	$('#cards-container').css('display', 'none')
 })
+
+function updateOponentDisplay(){
+	var rewriteOponent = document.getElementById('playerNumber-' + oponent)
+	rewriteOponent.innerText = players[oponent].playerName + ' : ' + players[oponent].playerPoints + 'b'
+}
