@@ -61,9 +61,11 @@ function cubeUse(){
     if(cubeSpeed < 500){
         cubeSpeed += 100;
         setTimeout(cubeUse, cubeSpeed);
+        cubeAudio()
     } else {
+        cubeAudio()
         cubeSpeed = 0;
-        gameplayFunction() //Runs gameplay.js script when cube finishes randomning
+        gameplayFunction()
     }
 }
 

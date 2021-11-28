@@ -21,6 +21,7 @@ const questions = [
 const duel = [
     'Strihanie',
     'Kto skôr žmurkne',
+    'Kto sa skôr zasmeje',
     'Palcová hra',
     'Pretláčanie rukou',
 ]
@@ -28,22 +29,23 @@ const duel = [
 const tasks = [
     'Vypi',
     'Vyzleč si čokoľvek, čo máš na sebe',
-    'Vyber si hráča s ktorým si vymeníš čokoľvek čo máte na sebe 1 za 1',
+    'Vyber si hráča, s ktorým si vymeníš čokoľvek čo máte na sebe 1 za 1',
 ]
 
 const facts = [
     'Tvoja najtrápnejšia historka, akú si pamätáš',
     'Kedy si sa prvykrát v živote opil?',
-    'Skúsil si marihuanu?',
+    'Skúsil si marihuanu? V koľkých rokoch prvý krát?',
     'V koľkých rokoch si sa prvý krát opil?',
     'Koľko frajeriek/ov si mal/a vo svojom živote?',
 ]
 
 const challengeTasks = [
     'Vyzuj si oboje ponožky',
-    'Vymenuj akékoľvek 4 hlavné mestá',
+    'Vymenuj akékoľvek 4 mestá českej republiky',
     'Vymenuj akékoľvek 4 európske hlavné mestá',
     'Vymenuj 5 mien na písmeno P',
     'Prines akýkoľvek žltý predmet',
+    'Vymysli báseň, ktorá má aspoň 4 verše',
     'Vypi',
 ]

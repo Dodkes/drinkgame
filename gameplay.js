@@ -35,6 +35,7 @@ function firstCategory(){
 	$('[card]').css('display', 'none') //hide cards
 	$('#task-1').css('display', 'inline-block') //show first category question
 	easyTask.innerText = questions[Math.floor(Math.random() * questions.length)]
+	drink()
 }
 
 function secondCategory(){
@@ -50,8 +51,9 @@ function thirdCategory(){
 	if(timer >= 0){
 		document.getElementById('preparation-text').innerText = timer
 		timer--
+		challengeCountDownAudio()
 		setTimeout(thirdCategory, 1000)
-	}else {
+	} else {
 		timer = 5;
 		challenge()
 	}
@@ -74,10 +76,11 @@ if(challengeBar >= 0){
 	switchPlayer()
 	challengeBar = 100
 	$('#challenge-container').css('display', 'none')
-	easyTask.innerText = 'Bohužiaľ si to nestihol/la'
+	easyTask.innerText = 'Čas vypršal !'
 	cubeUsable = true
 	$('#task-1').css('display', 'inline-block')
-}
+	challengeFailAudio()
+	}
 }
 //SWITCH TOP NAMES
 function orderPlayer(){
@@ -109,17 +112,20 @@ function switchPlayer(){
 function task(){
 	$('[winner-button-1]').css('display', 'none')
 	$('[winner-button-2]').css('display', 'none')
+	players[playerOrder].playerPoints += cubeNumber
 	orderPlayer()
 	switchPlayer()
 	cardSelectDisplay()
 	$('.fa-exclamation').css('display', 'block')
 	cardsText.innerText = tasks[Math.floor(Math.random() * tasks.length)]
 	cubeUsable = true
+	taskAudio()
 }
 
 function fact(){
 	$('[winner-button-1]').css('display', 'none')
 	$('[winner-button-2]').css('display', 'none')
+	players[playerOrder].playerPoints += cubeNumber
 	orderPlayer()
 	switchPlayer()
 	cardSelectDisplay()
@@ -148,6 +154,7 @@ $('.challenge-complete-button').click(()=>{
 	easyTask.innerText = 'Challenge splnená v čase !'
 	easyTask.style.color = 'lightgreen'
 	$('#task-1').css('display', 'inline-block')
+	challengeCorrectAudio()
 })
 
 function resetPlayerOrderVariable(){
@@ -164,9 +171,12 @@ function duelGame(){
 	while (oponent == playerOrder) {
 	oponent = Math.floor(Math.random() * players.length)
 	}
+	$('[winner-button-1]').css('display', 'inline-block')
+	$('[winner-button-2]').css('display', 'inline-block')
 	$('[winner-button-1]').text(players[playerOrder].playerName)
 	$('[winner-button-2]').text(players[oponent].playerName)
 	cardsText.innerText = duel[Math.floor(Math.random() * duel.length)] + ' s hráčom ' + players[oponent].playerName
+	duelAudio()
 }
 
 //First winner
