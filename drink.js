@@ -11,6 +11,7 @@ class Player{
 
 //Choosing number of players
 function game(x){
+    clickAudio()
     $('body').css('background', 'linear-gradient(-45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)')
     $('.intro').css('display', 'none')
     $('.set-names').css('display', 'block')
@@ -25,6 +26,7 @@ function game(x){
 }
 //Start game button click
 function startGame(){
+    clickAudio()
     inputsReset()
     emptyInputs = 0;
     for (j = 0; j < countPlayers; j++)  {    

@@ -26,6 +26,7 @@ function gameplayFunction(){
 }
 
 function firstCategory(){
+	$('.task-icon-container').css('display', 'block')
 	resetPlayerOrderVariable()
 	players[playerOrder].playerPoints += cubeNumber //TOTO PRIDAT DO FIRST CATEGORY -> RESP TAM KDE SA MAJU PRIDAT BODY
 	orderPlayer()
@@ -35,7 +36,7 @@ function firstCategory(){
 	$('[card]').css('display', 'none') //hide cards
 	$('#task-1').css('display', 'inline-block') //show first category question
 	easyTask.innerText = questions[Math.floor(Math.random() * questions.length)]
-	drink()
+	drinkAudio()
 }
 
 function secondCategory(){

@@ -8,6 +8,7 @@ var cubeNumber
 var cubeUsable = true
 
 cube.addEventListener('click', ()=>{
+	$('.task-icon-container').css('display', 'none')
     if(cubeUsable == true){
         clearGamePlace() //clears game place when cube is working-> cards, tasks etc.
         cubeUse()

@@ -16,6 +16,22 @@ const questions = [
     'Ak ti padlo nepárne číslo, piješ',
     'Vymenuj nejaký svoj zlozvyk',
     'Vyber si človeka a povedz čo ti na ňom prekáža',
+    'Vymysli názov knihy, ktorá by vystihovala tvoj život',
+    'Kde budeš o 10 rokov?',
+]
+
+const challengeTasks = [
+    'Vymenuj všetkých 6 šachových figúriek',
+    'Vyzuj si oboje ponožky',
+    'Vymenuj akékoľvek 4 mestá českej republiky',
+    'Vymenuj akékoľvek 4 mimoeurópske hlavné mestá',
+    'Vymenuj 5 mien na písmeno P',
+    'Postni akúkoľvek fotku na instagram story',
+    'Prines akýkoľvek žltý predmet',
+    'Vymysli báseň, ktorá má aspoň 4 verše',
+    'Vypi',
+    'Sprav 5 drepov',
+    'Sprav si selfie na svojom mobile',
 ]
 
 const duel = [
@@ -24,12 +40,23 @@ const duel = [
     'Kto sa skôr zasmeje',
     'Palcová hra',
     'Pretláčanie rukou',
+    'Otvorenie SMS aplikácie na mobile so zatvorenými očami',
 ]
 
 const tasks = [
     'Vypi',
     'Vyzleč si čokoľvek, čo máš na sebe',
     'Vyber si hráča, s ktorým si vymeníš čokoľvek čo máte na sebe 1 za 1',
+    'Prehovor kanibala, aby ťa nezjedol, použi aspoň 3 vety',
+    'Vezmi si akýkoľvek predmet, ktorý budeš nasledujúce 2 kolá po celý čas držať oboma rukami',
+    'Zahraj sa na plačúce dieťa',
+    'Zahryzni si do jazyka a odrecituj abecedu',
+    'Olíž si lakeť',
+    'Sprav pózu lastovičky',
+    'Nechaj sa niekym štekliť po dobu 7 sekúnd',
+    'Rozosmej iného hráča',
+    'Nakresli 1 rukou trojuholník a súčasne 2. rukou kruh',
+    'Osob po tvojej ľavici ti dá facku',
 ]
 
 const facts = [
@@ -38,14 +65,4 @@ const facts = [
     'Skúsil si marihuanu? V koľkých rokoch prvý krát?',
     'V koľkých rokoch si sa prvý krát opil?',
     'Koľko frajeriek/ov si mal/a vo svojom živote?',
-]
-
-const challengeTasks = [
-    'Vyzuj si oboje ponožky',
-    'Vymenuj akékoľvek 4 mestá českej republiky',
-    'Vymenuj akékoľvek 4 európske hlavné mestá',
-    'Vymenuj 5 mien na písmeno P',
-    'Prines akýkoľvek žltý predmet',
-    'Vymysli báseň, ktorá má aspoň 4 verše',
-    'Vypi',
 ]

@@ -42,8 +42,14 @@ function challengeCorrectAudio(){
     audio.play()
 }
 
-function drink(){
+function drinkAudio(){
     audioStop()
     audio.src = 'audio/vypi.wav'
+    audio.play()
+}
+
+function clickAudio(){
+    audioStop()
+    audio.src = 'audio/clickAudio.wav'
     audio.play()
 }
