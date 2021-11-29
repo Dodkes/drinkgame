@@ -46,6 +46,8 @@ img{
     background-color: rgba(0, 0, 0, 0.2);
     width: 100%;
     height: auto;
+    transition: 0.5s;
+
 }
 
 .style-2{
@@ -68,6 +70,7 @@ p{
     font-weight: bold;
     text-shadow: 2px 2px 5px black;
     display: inline;
+    transition: 0.5s;
 }
 
 #playerLayout{
@@ -292,6 +295,19 @@ div > .fas{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: 0.5s;
+}
+
+.fa-volume-up, .fa-volume-mute{
+    font-size: 2rem;
+    color: rgba(252,61,61,1);;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+}
+
+#unmute-button{
+    display: none;
 }
 
 @media only screen and (max-width: 1300px) {
@@ -310,11 +326,16 @@ div > .fas{
         text-align:left;
         margin: -1vh; /*TOTO TREBA FIXNUT ABY NEBOLA ZAPORNA HODNOTA ale vymysliet iny sposob, JE TO SPOSOBENE DISPLEJ BLOCKK*/
     }
-   
-#challenge-card, #task-card, #fact-card{
-    padding: 40px 20px;
-    width: 6rem;
-    margin: 10px;
-    top: 20%;
+    #challenge-card, #task-card, #fact-card{
+        padding: 40px 20px;
+        width: 6rem;
+        margin: 10px;
+        top: 20%;
+    }
+    .task-icon-container{
+        top: 60%;
+    }
+    #playerTurn{
+        top: 130px;
     }
 }

@@ -1,14 +1,14 @@
 //First category questions/tasks
 const questions = [
     'Všetci chlapci si vypijú',
-    'Povedz čoho sa najviac bojíš',
+    'Čoho sa najviac bojíš',
     'Povedz vtip',
     'Čo ťa najviac vytočí?',
     'V poradí 3. človek na ľavo od teba pije s tebou',
     'Všetky ženy si vypijú',
     'Vypi, alebo vyber hráča, ktorý vypije za teba',
     'Vyber si človeka s ktorým vypiješ',
-    'Čo by si na sebe zmenil?',
+    'Čo by si na sebe zmenil/a?',
     'S ktorým hráčom by si sa rád/a ocitol/la na opustenom ostrove a prečo?',
     'Vymysli nový produkt a pomenuj ho',
     'Vyber si 1 človeka a povedz prečo by si s ním šiel na rande',
@@ -18,6 +18,7 @@ const questions = [
     'Vyber si človeka a povedz čo ti na ňom prekáža',
     'Vymysli názov knihy, ktorá by vystihovala tvoj život',
     'Kde budeš o 10 rokov?',
+    'Priznaj nejakú tvoju slabosť',
 ]
 
 const challengeTasks = [

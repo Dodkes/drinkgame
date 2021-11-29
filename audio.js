@@ -1,4 +1,5 @@
 const audio = document.getElementById('audioId')
+var mute = false
 audio.src = 'audio/cube-1.wav'
 
 function audioStop(){
@@ -7,49 +8,77 @@ function audioStop(){
 }
 
 function challengeCountDownAudio(){
-    audioStop()
-    audio.src = 'audio/countdown.wav'
-    audio.play()
+    if (mute == false){
+        audioStop()
+        audio.src = 'audio/countdown.wav'
+        audio.play()
+    }
 }
 
 function taskAudio(){
-    audioStop()
-    audio.src = 'audio/task.wav'
-	audio.play()
+    if (mute == false){
+        audioStop()
+        audio.src = 'audio/task.wav'
+        audio.play()
+    }
 }
 
 function duelAudio(){
-    audioStop()
-	audio.src = "audio/duel.wav"
-	audio.play()
+    if (mute == false){
+        audioStop()
+        audio.src = "audio/duel.wav"
+        audio.play()
+    }
 }
 
 function cubeAudio(){
-    audioStop()
-    audio.src = 'audio/cube-1.wav'
-    audio.play()
+    if (mute == false){
+        audioStop()
+        audio.src = 'audio/cube-1.wav'
+        audio.play()
+    }
 }
 
 function challengeFailAudio(){
-    audioStop()
-    audio.src = 'audio/challengeOOT.wav'
-    audio.play()
+    if (mute == false){
+        audioStop()
+        audio.src = 'audio/challengeOOT.wav'
+        audio.play()
+    }
 }
 
 function challengeCorrectAudio(){
-    audioStop()
-    audio.src = 'audio/challengeCorrect.wav'
-    audio.play()
+    if (mute == false){
+        audioStop()
+        audio.src = 'audio/challengeCorrect.wav'
+        audio.play()
+    }
 }
 
 function drinkAudio(){
-    audioStop()
-    audio.src = 'audio/vypi.wav'
-    audio.play()
+    if (mute == false){
+        audioStop()
+        audio.src = 'audio/vypi.wav'
+        audio.play()
+    }
 }
 
 function clickAudio(){
-    audioStop()
-    audio.src = 'audio/clickAudio.wav'
-    audio.play()
+    if (mute == false){
+        audioStop()
+        audio.src = 'audio/clickAudio.wav'
+        audio.play()
+    }
+}
+
+function muteFunction(){
+    if (mute == false){
+        mute = true
+        $('#mute-button').css('display', 'none')
+        $('#unmute-button').css('display', 'block')
+    } else if (mute == true){
+        mute = false
+        $('#mute-button').css('display', 'block')
+        $('#unmute-button').css('display', 'none')
+    }
 }
