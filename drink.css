@@ -300,13 +300,20 @@ div > .fas{
 
 .fa-volume-up, .fa-volume-mute{
     font-size: 2rem;
-    color: rgba(252,61,61,1);;
-    position: fixed;
+    color: rgba(252,61,61,1);
+    background-color: none;
+}
+
+#unmute-button, #mute-button{
     bottom: 5%;
     right: 5%;
+    position: fixed;
+    background-color: transparent;
+    border: none;
 }
 
 #unmute-button{
+
     display: none;
 }
 
