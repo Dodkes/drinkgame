@@ -58,6 +58,8 @@ const tasks = [
     'Rozosmej iného hráča',
     'Nakresli 1 rukou trojuholník a súčasne 2. rukou kruh',
     'Osob po tvojej ľavici ti dá facku',
+    'Vymenuj 5 zvierat, ktoré by si nenašiel v ZOO',
+    'Vymenuj 3 veci, ktoré by pokazili rande',
 ]
 
 const facts = [
@@ -66,4 +68,8 @@ const facts = [
     'Skúsil si marihuanu? V koľkých rokoch prvý krát?',
     'V koľkých rokoch si sa prvý krát opil?',
     'Koľko frajeriek/ov si mal/a vo svojom živote?',
+    'Popíš aký priestupok/trestný čin si naposledy spravil/a',
+    'Kedy si sa najviac opil/a? Popíš to',
+    'Akú najtrápnejšiu vec si kupoval/a?',
+    'Na akom najbizárnejšom mieste si zaspal/a?',
 ]

@@ -57,5 +57,6 @@ function inputsReset(){
     while(cont.firstChild){
         cont.removeChild(cont.firstChild)
     }
+    players = []
     emptyInputs++
 }

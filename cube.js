@@ -1,7 +1,7 @@
 //CANVAS VARIABLES
 var myCanvas = document.getElementById('cube') //canvas get
-var ctx = myCanvas.getContext('2d') // canvas pen
-ctx.fillStyle = 'black' // canvas pen color
+var ctx = myCanvas.getContext('2d') //canvas pen
+ctx.fillStyle = 'black' //canvas pen color
 const circle = 2 * Math.PI
 var cubeSpeed = 0
 var cubeNumber
@@ -12,7 +12,7 @@ cube.addEventListener('click', ()=>{
     if(cubeUsable == true){
         clearGamePlace() //clears game place when cube is working-> cards, tasks etc.
         cubeUse()
-        cubeUsable = false // FIXNUT NA FALSE !!!!!!!!!!!!!!!!!!!!!!!!!
+        cubeUsable = false
     }
 })
 
@@ -71,8 +71,8 @@ function cubeUse(){
 }
 
 function draw(x, y, r, sAngle, eAngle){
-    ctx.beginPath(); // path musi byt zresetovana, inak vsetky vytvorene arc metody sa budu spajat
-    ctx.arc(x, y, r, sAngle, eAngle); // vzorec
+    ctx.beginPath(); // path must be always reset so dots are not connected and starting from 0 point
+    ctx.arc(x, y, r, sAngle, eAngle); // formula
     ctx.fill()
 }
 

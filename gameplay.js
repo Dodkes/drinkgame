@@ -9,7 +9,7 @@ var timeFunction
 var oponent
 //Choose 1 of 3 playing categories
 function gameplayFunction(){
-	$('#cards-container').css('display', 'none') //display none pre kategoriu s kartami
+	$('#cards-container').css('display', 'none')
 	var random = Math.floor(Math.random() *3 + 1)
 	switch(random){
 		case 1:
@@ -28,13 +28,13 @@ function gameplayFunction(){
 function firstCategory(){
 	$('.task-icon-container').css('display', 'block')
 	resetPlayerOrderVariable()
-	players[playerOrder].playerPoints += cubeNumber //TOTO PRIDAT DO FIRST CATEGORY -> RESP TAM KDE SA MAJU PRIDAT BODY
+	players[playerOrder].playerPoints += cubeNumber
 	orderPlayer()
 	switchPlayer()
 	cubeUsable = true
 	$('#challenge-container').css('display', 'none')
-	$('[card]').css('display', 'none') //hide cards
-	$('#task-1').css('display', 'inline-block') //show first category question
+	$('[card]').css('display', 'none')
+	$('#task-1').css('display', 'inline-block') 
 	easyTask.innerText = questions[Math.floor(Math.random() * questions.length)]
 	drinkAudio()
 }
@@ -43,7 +43,7 @@ function secondCategory(){
 	resetPlayerOrderVariable()
 	$('#challenge-container').css('display', 'none')
 	$('#task-1').css('display', 'none')
-	$('[card]').css('display', 'inline-block') //show cards
+	$('[card]').css('display', 'inline-block')
 }
 
 function thirdCategory(){
@@ -60,7 +60,7 @@ function thirdCategory(){
 	}
 }
 
-function challenge() { //tu budu challgenes -> ulohy zadavat do database.js scriptu
+function challenge() { //challenges
 	$('#preparation-box').css('display', 'none')
 	challengeText.innerText = challengeTasks[Math.floor(Math.random() * challengeTasks.length)]
 	$('#challenge-container').css('display', 'block')
@@ -140,10 +140,10 @@ function cardSelectDisplay(){
 	$('.interpreting').css('display', 'none')
 	$('.mask').css('display', 'none')
 	$('[card]').css('display', 'none')
-	$('#cards-container').css('display', 'block') //display none pouzit pre aby zmizlit kartove ulohy
+	$('#cards-container').css('display', 'block')
 }
 
-//Challenge in-time button-------------------------------------------
+//Challenge in-time button
 $('.challenge-complete-button').click(()=>{
 	clearTimeout(timeFunction)
 	players[playerOrder].playerPoints += cubeNumber
@@ -159,12 +159,12 @@ $('.challenge-complete-button').click(()=>{
 })
 
 function resetPlayerOrderVariable(){
-	if(playerOrder == countPlayers){ //countPlayers - 1
+	if(playerOrder == countPlayers){
 		playerOrder = 0
 	}
 }
 
-//CARDS-------------------------------------------
+//CARDS
 function duelGame(){
 	cardSelectDisplay() // function for hiding all cards only
 	$('.fa-american-sign-language-interpreting').css('display', 'block')
