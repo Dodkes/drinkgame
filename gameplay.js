@@ -1,4 +1,4 @@
-const easyTask = document.getElementById('task-1')
+let easyTask = document.getElementById('task-1')
 const challengeText = document.getElementById('challenge-text')
 var cardsText = document.getElementById('cards-text')
 var timer = 5
@@ -7,6 +7,7 @@ var switchCase = 1
 var challengeBar = 100
 var timeFunction
 var oponent
+let addPoints = true
 //Choose 1 of 3 playing categories
 function gameplayFunction(){
 	$('#cards-container').css('display', 'none')
@@ -26,17 +27,31 @@ function gameplayFunction(){
 }
 
 function firstCategory(){
+	easyTask.style.color = 'white'
+	$('.proceed').css('display', 'block')
 	$('.task-icon-container').css('display', 'block')
-	resetPlayerOrderVariable()
-	players[playerOrder].playerPoints += cubeNumber
-	orderPlayer()
-	switchPlayer()
-	cubeUsable = true
 	$('#challenge-container').css('display', 'none')
 	$('[card]').css('display', 'none')
 	$('#task-1').css('display', 'inline-block') 
 	easyTask.innerText = questions[Math.floor(Math.random() * questions.length)]
 	drinkAudio()
+	myCanvas.style.opacity = '0.5'
+
+}
+
+function firstCategoryProceed(){
+	if (addPoints == true){
+		players[playerOrder].playerPoints += cubeNumber
+	}
+	addPoints = true
+	$('.proceed').css('display', 'none')
+	$('.task-icon-container').css('display', 'none')
+	$('#task-1').css('display', 'none') 
+	cubeUsable = true
+	resetPlayerOrderVariable()
+	orderPlayer()
+	switchPlayer()
+	myCanvas.style.opacity = '1'
 }
 
 function secondCategory(){
@@ -44,9 +59,11 @@ function secondCategory(){
 	$('#challenge-container').css('display', 'none')
 	$('#task-1').css('display', 'none')
 	$('[card]').css('display', 'inline-block')
+	myCanvas.style.opacity = '0.5'
 }
 
 function thirdCategory(){
+	myCanvas.style.opacity = '0.5'
 	resetPlayerOrderVariable()
 	$('#challenge-container').css('display', 'none')
 	if(timer >= 0){
@@ -73,12 +90,11 @@ if(challengeBar >= 0){
 	$('.progress-bar').css('width', challengeBar + '%')
 	timeFunction = setTimeout(challengeTimer, 100)
 } else {
-	orderPlayer()
-	switchPlayer()
 	challengeBar = 100
 	$('#challenge-container').css('display', 'none')
+	$('.proceed').css('display', 'block')
 	easyTask.innerText = 'Čas vypršal !'
-	cubeUsable = true
+	addPoints = false
 	$('#task-1').css('display', 'inline-block')
 	challengeFailAudio()
 	}
@@ -145,12 +161,9 @@ function cardSelectDisplay(){
 
 //Challenge in-time button
 $('.challenge-complete-button').click(()=>{
+	$('.proceed').css('display', 'block')
 	clearTimeout(timeFunction)
-	players[playerOrder].playerPoints += cubeNumber
-	orderPlayer()
-	switchPlayer()
 	challengeBar = 100
-	cubeUsable = true
 	$('#challenge-container').css('display', 'none')
 	easyTask.innerText = 'Challenge splnená v čase !'
 	easyTask.style.color = 'lightgreen'
@@ -182,6 +195,7 @@ function duelGame(){
 
 //First winner
 $('[winner-button-1]').click(()=>{
+	myCanvas.style.opacity = '1'
 	players[playerOrder].playerPoints += cubeNumber
 	players[oponent].playerPoints -= cubeNumber
 	updateDisplay()
@@ -193,6 +207,7 @@ $('[winner-button-1]').click(()=>{
 })
 //Second winner
 $('[winner-button-2]').click(()=>{
+	myCanvas.style.opacity = '1'
 	players[playerOrder].playerPoints -= cubeNumber
 	players[oponent].playerPoints += cubeNumber
 	updateDisplay()

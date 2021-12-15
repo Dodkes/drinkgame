@@ -37,6 +37,11 @@ img{
     object-fit: cover;
 }
 
+.proceed:hover{
+    background-color: black;
+    color: lightgreen;
+}
+
 .style-1{
     text-align: center;
     position: absolute;
@@ -298,6 +303,21 @@ div > .fas{
     transition: 0.5s;
 }
 
+.proceed{
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+    outline: none;
+    border: 1px solid black;
+    padding: 1vh 2vh;
+    background-color:lightgreen;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+    display: none;
+}
+
 .fa-volume-up, .fa-volume-mute{
     font-size: 2rem;
     color: rgba(252,61,61,1);
@@ -340,7 +360,10 @@ div > .fas{
         top: 20%;
     }
     .task-icon-container{
-        top: 60%;
+        top: 50%;
+    }
+    .proceed{
+        top: 70%;
     }
     #playerTurn{
         top: 130px;
