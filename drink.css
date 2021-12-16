@@ -333,8 +333,28 @@ div > .fas{
 }
 
 #unmute-button{
-
     display: none;
+}
+
+.gameplayButtons{
+    display: none;
+    position: relative;
+    top: 60%;
+    left: 0;
+}
+
+#doneButton, #failButton{
+    outline: none;
+    border: none;
+    margin: 5vh;
+    color: lightgreen;
+    text-shadow: 2px 2px 2px black;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#failButton{
+    color: rgba(252,61,61,1);
 }
 
 @media only screen and (max-width: 1300px) {

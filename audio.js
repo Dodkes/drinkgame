@@ -15,6 +15,14 @@ function challengeCountDownAudio(){
     }
 }
 
+function factAudio(){
+    if (mute == false){
+        audioStop()
+        audio.src = 'audio/fact.wav'
+        audio.play()
+    }
+}
+
 function taskAudio(){
     if (mute == false){
         audioStop()

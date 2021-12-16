@@ -127,28 +127,25 @@ function switchPlayer(){
 }
 
 function task(){
+	cubeUsable = false
+	$('.gameplayButtons').css('display', 'inline-block')
 	$('[winner-button-1]').css('display', 'none')
 	$('[winner-button-2]').css('display', 'none')
-	players[playerOrder].playerPoints += cubeNumber
-	orderPlayer()
-	switchPlayer()
 	cardSelectDisplay()
 	$('.fa-exclamation').css('display', 'block')
 	cardsText.innerText = tasks[Math.floor(Math.random() * tasks.length)]
-	cubeUsable = true
 	taskAudio()
 }
 
 function fact(){
+	cubeUsable = false
+	$('.gameplayButtons').css('display', 'inline-block')
 	$('[winner-button-1]').css('display', 'none')
 	$('[winner-button-2]').css('display', 'none')
-	players[playerOrder].playerPoints += cubeNumber
-	orderPlayer()
-	switchPlayer()
 	cardSelectDisplay()
 	$('.fa-theater-masks').css('display', 'block')
 	cardsText.innerText = facts[Math.floor(Math.random() * facts.length)]
-	cubeUsable = true
+	factAudio()
 }
 
 function cardSelectDisplay(){
@@ -221,4 +218,23 @@ $('[winner-button-2]').click(()=>{
 function updateOponentDisplay(){
 	var rewriteOponent = document.getElementById('playerNumber-' + oponent)
 	rewriteOponent.innerText = players[oponent].playerName + ' : ' + players[oponent].playerPoints + 'b'
+}
+
+function failButton(){
+	$('#cards-container').css('display', 'none')
+	$('.gameplayButtons').css('display', 'none')
+	cubeUsable = true	
+	orderPlayer()
+	switchPlayer()
+	myCanvas.style.opacity = '1'
+}
+
+function doneButton(){
+	$('#cards-container').css('display', 'none')
+	$('.gameplayButtons').css('display', 'none')
+	cubeUsable = true
+	players[playerOrder].playerPoints += cubeNumber
+	orderPlayer()
+	switchPlayer()
+	myCanvas.style.opacity = '1'
 }
