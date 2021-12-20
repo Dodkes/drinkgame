@@ -7,6 +7,8 @@
 body{
     background-color: black;
     color: white;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 h1{
@@ -25,10 +27,6 @@ h1{
     transition: 0.5s;
 }
 
-.intro{
-    position: relative;
-}
-
 img{
     width: 100%;
     height: 100vh;
@@ -42,7 +40,7 @@ img{
     color: lightgreen;
 }
 
-.style-1{
+.container-fluid{
     text-align: center;
     position: absolute;
     top: 10%;
@@ -79,6 +77,7 @@ p{
 }
 
 #playerLayout{
+    position: relative;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.4);
     padding: 20px;
@@ -133,7 +132,7 @@ input:hover{
 }
 
 .players{
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -183,7 +182,7 @@ canvas{
 /* Display alert after empty inputs */
 .alert{
     display: none;
-    position: fixed;
+    position: relative;
     top: 7vh;
     left: 0;
     width: 100%;
@@ -201,8 +200,12 @@ canvas{
 
 #task-1{
     display: none;
-    position: relative;
+    position: absolute;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
     color: rgb(255, 230, 230);
     text-shadow: 2px 2px 5px black;
 }
@@ -277,10 +280,8 @@ div > .fas{
     top: 50%;
     display: none;
     width: 100%;
-    height: 10vh;
-    text-align: center;
+    height: auto;
     text-shadow: 2px 2px 5px black;
-    border: 2px 0px 2px 0px solid black;
 }
 
 #cards-container > .fas{
@@ -296,16 +297,16 @@ div > .fas{
 
 .task-icon-container{
     display: none;
-    position: fixed;
-    top: 40%;
+    position: relative;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.5s;
 }
 
 .proceed{
-    position: fixed;
-    top: 60%;
+    position: relative;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.5s;
@@ -346,7 +347,7 @@ div > .fas{
 #doneButton, #failButton{
     outline: none;
     border: none;
-    margin: 5vh;
+    margin: 0 3vh;
     color: lightgreen;
     text-shadow: 2px 2px 2px black;
     font-size: 40px;
@@ -358,34 +359,65 @@ div > .fas{
 }
 
 @media only screen and (max-width: 1300px) {
+    h1{
+        font-size: 5vh;
+    }
     .btn-warning{
         width: 50%;
     }
-    .style-1{
-        margin-top: 400px;
+    .container-fluid{
+        top: 50%;
         width: 100%;
     }
     canvas{
-        width: 10vh;
+        width: 15vh;
     }
     p{
         display: block;
         text-align:left;
-        margin: -1vh; /*TOTO TREBA FIXNUT ABY NEBOLA ZAPORNA HODNOTA ale vymysliet iny sposob, JE TO SPOSOBENE DISPLEJ BLOCKK*/
+        margin: -1vh;
     }
     #challenge-card, #task-card, #fact-card{
         padding: 40px 20px;
         width: 6rem;
         margin: 10px;
-        top: 20%;
+        top: 60%;
     }
     .task-icon-container{
-        top: 50%;
+        top: 85%;
     }
     .proceed{
-        top: 70%;
+        top: 90%;
     }
     #playerTurn{
         top: 130px;
+    }
+    .players{
+        top: 35%;
+    }
+    input{
+        margin: 2%;
+    }
+    #preparation-box > h3{
+        font-size: 3vh;
+    }
+    #preparation-box, #challenge-container{
+        top: 70%;
+    }
+    #task-1, #challenge-text, #cards-text{
+        font-size: 3vh;
+        top: 70%;
+    }
+    #playerTurn{
+        padding: 1vh 1.5vh;
+    }
+    #playerLayout{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    #cards-container{
+        top: 70%;
     }
 }

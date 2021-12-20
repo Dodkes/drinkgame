@@ -32,15 +32,12 @@
     </div>
     <!-- Second screen (inputs show)-->
     <div class="set-names style-2">
-        <h1>Zadajte mená hráčov</h1><br>
+        <h1>Zadaj mená hráčov</h1><br>
         <div class="alert alert-dark">
             <Strong>Chyba!</Strong> Vyplň mená všetkých hráčov
         </div>
-    
-        <div class="players">
-
-        </div>
-        <button class="game-button" onclick="startGame()">Start game</button>
+            <div class="players"></div>
+        <button class="game-button" onclick="startGame()">Spustiť hru</button>
     </div>
     <!-- Third screen container -->
     <div class="gameplay">
@@ -65,11 +62,12 @@
                 <i class="fas fa-exclamation exclamation"></i>
                 <h2 id="cards-text"></h2>
                 <button winner-button-1 class="btn btn-dark"></button><button winner-button-2 class="btn btn-danger"></button>
+                <div class="gameplayButtons">
+                    <button id="failButton" onclick="failButton()"><i class="fas fa-times"></i></button>
+                    <button id="doneButton" onclick="doneButton()"><i class="fas fa-check"></i></button>
+                </div>
             </div>
-            <div class="gameplayButtons">
-                <button id="failButton" onclick="failButton()"><i class="fas fa-times"></i></button>
-                <button id="doneButton" onclick="doneButton()"><i class="fas fa-check"></i></button>
-            </div>
+
             <!-- third category (challenge-preparation) -->
             <div id="preparation-box">
                 <h3>10 sekundová challenge o <strong id="preparation-text"></strong> sekúnd</h3><br>

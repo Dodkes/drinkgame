@@ -11,6 +11,7 @@ class Player{
 
 //Choosing number of players
 function game(x){
+    $('body').css('overflow', 'auto')
     clickAudio()
     $('body').css('background', 'linear-gradient(-45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)')
     $('.intro').css('display', 'none')
@@ -48,6 +49,7 @@ function startGame(){
         $('.set-names').css('display', 'none')
         $('.gameplay').css('display', 'block')
         document.getElementById('playerTurn').innerText =  players[0].playerName
+        $('body').css('overflow', 'hidden')
     }
 }
 
