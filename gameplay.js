@@ -238,4 +238,3 @@ function doneButton(){
 	switchPlayer()
 	myCanvas.style.opacity = '1'
 }
-console.log('loaded')

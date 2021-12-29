@@ -292,7 +292,7 @@ div > .fas{
 
 .btn-dark, .btn-danger{
     padding: 10px 20px;
-    margin: 50px 10px;
+    margin: 20px 10px;
 }
 
 .task-icon-container{
@@ -363,7 +363,7 @@ div > .fas{
         font-size: 5vh;
     }
     .btn-warning{
-        width: 50%;
+        width: 70%;
     }
     .container-fluid{
         top: 50%;

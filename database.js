@@ -63,7 +63,6 @@ const tasks = [
     'Osoba po tvojej ľavici ti dá facku',
     'Vymenuj 5 zvierat, ktoré by si nenašiel v ZOO',
     'Vymenuj 3 veci, ktoré by pokazili rande',
-    'Vyber hráča a prezraď nejakú jeho trápnu príhodu',
 ]
 
 const facts = [
