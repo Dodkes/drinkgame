@@ -79,3 +79,53 @@ const facts = [
   "Ukradol/a si niečo? A ak áno, bolo to aspoň worth it?",
   "Ako dlho si sa najviac nesprchoval/a... a prečo?",
 ];
+
+const questions18Plus = [
+  "Aký najdivokejší sexuálny zážitok si mal/a?",
+  "Na aké miesto na tele ťa najviac vzrušuje dotyk?",
+  "Máš sexi fantáziu, o ktorej si ešte nikomu nepovedal/a?",
+  "Používaš hračky v spálni? Ak áno – ktoré odporúčaš?",
+  "S ktorým hráčom/by si si najskôr vymenil/a spodné prádlo?",
+  "Ktorú časť svojho tela považuješ za najviac sexy?",
+  "Ako dlho trval tvoj najdlhší sex?",
+  "Mal/a si niekedy sex na verejnom mieste? Kde presne?",
+  "Máš nejaký fetiš alebo úchylku, ktorú si doteraz tajil/a?",
+  'S kým z hráčov by si šiel/šla na "Netflix & chill"?',
+  "Na aké porno sa najčastejšie pozeráš?",
+  "Ak by si mal/a spraviť striptease – na akú pesničku by to bolo?",
+  "Kto z prítomných by ti najlepšie masíroval... nohy?",
+  "Opíš svoj najväčší trapas počas sexu... detailne.",
+  "Máš skúsenosť s trojkou? Ak nie – s kým by si chcel/a?",
+  "Máš niečo, čo ti partner/ka zakázal/a v posteli a teba to lákalo?",
+  "Ktoré z tvojich ex by si si ešte raz „dal/a“?",
+  "Ktorý herec/herečka ťa vie dostať jedným pohľadom do postele?",
+  "Bol/a si niekedy pristihnutý/á pri sexe? Kto vás načapal?",
+  "Mal/a si niekedy sen o niekom z prítomných? Ak áno – o kom?",
+];
+
+const tasks18Plus = [
+  "Ukáž ostatným svoju poslednú fotku v galérii. Ak je nuda – vypi!",
+  "Prečítaj nahlas poslednú správu, ktorú si niekomu flirtujúco napísal/a",
+  "Simuluj orgazmus pred skupinou... alebo vypi 2 panáky",
+  "Daj niekomu masáž ramien... ale so zavretými očami",
+  "Nakresli penis... so zavretými očami",
+  "Vymysli sexy prezývku pre osobu po tvojej pravici",
+  "Napíš do poznámok najšpinavšiu správu, akú by si niekomu poslal – a prečítaj ju nahlas",
+  "Olíž hráčovi prst... ktorý si vyberieš ty",
+  "Zatancuj „lap dance“ (môže byť aj cez oblečenie) niekomu, koho si zvolíš",
+  "Hráč vľavo ti povie, ktorú časť tela máš ukázať – buď ukáž, alebo vypi",
+  "Prezraď meno niekoho, koho by si chcel/a vidieť nahého/nahú",
+  "Vymysli pikantnú reklamu na lubrikačný gél",
+  "Zahráš 10 sekúnd zvukový klip „sexi hlasu“ – ak to ostatní neuznajú, piješ",
+  "Pošepkaj niekomu do ucha niečo, čo by si mu povedal/a po treťom pohári vína",
+  "Urob selfie, na ktorej vyzeráš najviac „chceš ma“ – a ukáž ju skupine",
+];
+
+const duel18Plus = [
+  "Kto spraví lepší sexi pohľad do kamery – hlasovaním určí skupina",
+  "Zatancujte spolu na imaginárny sexi beat... kto sa skôr zasmeje, prehral",
+  "Flirtovacia výzva: kto za 10 sekúnd presvedčí druhého, aby si s ním išiel na drink?",
+  "Pretláčanie rukou... kto prehrá, dá tomu druhému bozk na líce",
+  "Oči do očí – kto uhne pohľad ako prvý, prehral a pije",
+  "Každý povie jednu špinavú vetu – kto znie viac ako z porna, prehráva",
+];

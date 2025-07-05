@@ -1,101 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <!-- link to css -->
-    <link rel="stylesheet" href="drink.css">
+    <link rel="stylesheet" href="drink.css" />
     <!-- Icons -->
-    <script src="https://kit.fontawesome.com/1f1400aac2.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/1f1400aac2.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Title icon -->
-    <link rel="shortcut icon" href="https://www.podnikajte.sk/cached/containers/main/obrazky-v-anotaciach/potraviny-pivo-1.jpg/6edfb2ed92ecad26e81b02ba04f4836e.jpg">
+    <link
+      rel="shortcut icon"
+      href="https://www.podnikajte.sk/cached/containers/main/obrazky-v-anotaciach/potraviny-pivo-1.jpg/6edfb2ed92ecad26e81b02ba04f4836e.jpg"
+    />
     <title>Pod obraz boží</title>
-</head>
-<body>
-    <audio src="" id="audioId"></audio> <!--SOUND EFFECTS ELEMENT-->
+  </head>
+  <body>
+    <audio src="" id="audioId"></audio>
+    <!--SOUND EFFECTS ELEMENT-->
     <!-- First screen (select number players)-->
     <div class="intro">
-        <img src="background.jpg" alt="Pivko">
-        <div class="container-fluid style-1">
-            <h1>Vyber počet hráčov</h1> <br>    
-            <button onclick="game(2)" class="btn btn-warning"><i class="fas fa-male"></i><i class="fas fa-male"></i></button>
-            <button onclick="game(3)" class="btn btn-warning"><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i></button>
-            <button onclick="game(4)" class="btn btn-warning"><i class="fas fa-male"><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i></i></button>
-            <button onclick="game(5)" class="btn btn-warning"><i class="fas fa-male"><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i></i></button>
-            <button onclick="game(6)" class="btn btn-warning"><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i><i class="fas fa-male"></i></button>
-        </div>
+      <img src="background.jpg" alt="Pivko" />
+      <div class="container-fluid style-1">
+        <h1>Vyber počet hráčov</h1>
+        <button class="btn-18-plus">Mód 18+</button>
+        <br />
+        <button onclick="game(2)" class="btn btn-warning">
+          <i class="fas fa-male"></i><i class="fas fa-male"></i>
+        </button>
+        <button onclick="game(3)" class="btn btn-warning">
+          <i class="fas fa-male"></i><i class="fas fa-male"></i
+          ><i class="fas fa-male"></i>
+        </button>
+        <button onclick="game(4)" class="btn btn-warning">
+          <i class="fas fa-male"
+            ><i class="fas fa-male"></i><i class="fas fa-male"></i
+            ><i class="fas fa-male"></i
+          ></i>
+        </button>
+        <button onclick="game(5)" class="btn btn-warning">
+          <i class="fas fa-male"
+            ><i class="fas fa-male"></i><i class="fas fa-male"></i
+            ><i class="fas fa-male"></i><i class="fas fa-male"></i
+          ></i>
+        </button>
+        <button onclick="game(6)" class="btn btn-warning">
+          <i class="fas fa-male"></i><i class="fas fa-male"></i
+          ><i class="fas fa-male"></i><i class="fas fa-male"></i
+          ><i class="fas fa-male"></i><i class="fas fa-male"></i>
+        </button>
+      </div>
     </div>
     <!-- Second screen (inputs show)-->
     <div class="set-names style-2">
-        <h1>Zadaj mená hráčov</h1><br>
-        <div class="alert alert-dark">
-            <Strong>Chyba!</Strong> Vyplň mená všetkých hráčov
-        </div>
-            <div class="players"></div>
-        <button class="game-button" onclick="startGame()">Spustiť hru</button>
+      <h1>Zadaj mená hráčov</h1>
+      <br />
+      <div class="alert alert-dark">
+        <strong>Chyba!</strong> Vyplň mená všetkých hráčov
+      </div>
+      <div class="players"></div>
+      <button class="game-button" onclick="startGame()">Spustiť hru</button>
     </div>
     <!-- Third screen container -->
     <div class="gameplay">
-        <div id="playerLayout"></div>
-        <p id="playerTurn"></p>
-        <!-- gameplay -->
-        <div id="game">
-            <!-- first category -->
-            <h2 id="task-1"></h2>
-            <div class="task-icon-container"><i class="fas fa-wine-glass"></i></div>
-            <button class="proceed" onclick="firstCategoryProceed()">
-                <i class="fas fa-angle-double-right"></i>
-            </button>
-            <!-- second category (cards) -->
-            <div onclick="duelGame()" card id="challenge-card" title="Výzva"><i class="fas fa-american-sign-language-interpreting"></i></div>
-            <div onclick="task()" card id="task-card" title="Úloha"><i class="fas fa-exclamation"></i></div>
-            <div onclick="fact()" card id="fact-card" title="Fakt"><i class="fas fa-theater-masks"></i></div>
-            <!-- cards choice container -->
-            <div id="cards-container">
-                <i class="fas fa-theater-masks mask"></i>
-                <i class="fas fa-american-sign-language-interpreting interpreting"></i>
-                <i class="fas fa-exclamation exclamation"></i>
-                <h2 id="cards-text"></h2>
-                <button winner-button-1 class="btn btn-dark"></button><button winner-button-2 class="btn btn-danger"></button>
-                <div class="gameplayButtons">
-                    <button id="failButton" onclick="failButton()"><i class="fas fa-times"></i></button>
-                    <button id="doneButton" onclick="doneButton()"><i class="fas fa-check"></i></button>
-                </div>
-            </div>
-            <!-- third category (challenge-preparation) -->
-            <div id="preparation-box">
-                <h3>10 sekundová challenge o <strong id="preparation-text"></strong> sekúnd</h3><br>
-                <div class="spinner-border text-danger"></div>
-            </div>
-            <!-- challenge -->
-            <div id="challenge-container">
-                <h2 id="challenge-text"></h2>
-                <div class="progress-container">
-                    <div class="progress">
-                        <div class="progress-bar bg-danger"></div>
-                    </div>
-                <button class="challenge-complete-button"><i class="far fa-hand-pointer"></i></button>
-                </div>
-            </div>
+      <div id="playerLayout"></div>
+      <p id="playerTurn"></p>
+      <!-- gameplay -->
+      <div id="game">
+        <!-- first category -->
+        <h2 id="task-1"></h2>
+        <div class="task-icon-container"><i class="fas fa-wine-glass"></i></div>
+        <button class="proceed" onclick="firstCategoryProceed()">
+          <i class="fas fa-angle-double-right"></i>
+        </button>
+        <!-- second category (cards) -->
+        <div onclick="duelGame()" card id="challenge-card" title="Výzva">
+          <i class="fas fa-american-sign-language-interpreting"></i>
         </div>
-        <!-- cube -->
-        <canvas id="cube" width="200" height="200"></canvas>
-        <button onclick="muteFunction()" id="mute-button">
-            <i class="fas fa-volume-up"></i>
-        </button>
-        <button onclick="muteFunction()" id="unmute-button">
-            <i class="fas fa-volume-mute"></i>
-        </button>
+        <div onclick="task()" card id="task-card" title="Úloha">
+          <i class="fas fa-exclamation"></i>
+        </div>
+        <div onclick="fact()" card id="fact-card" title="Fakt">
+          <i class="fas fa-theater-masks"></i>
+        </div>
+        <!-- cards choice container -->
+        <div id="cards-container">
+          <i class="fas fa-theater-masks mask"></i>
+          <i
+            class="fas fa-american-sign-language-interpreting interpreting"
+          ></i>
+          <i class="fas fa-exclamation exclamation"></i>
+          <h2 id="cards-text"></h2>
+          <button winner-button-1 class="btn btn-dark"></button
+          ><button winner-button-2 class="btn btn-danger"></button>
+          <div class="gameplayButtons">
+            <button id="failButton" onclick="failButton()">
+              <i class="fas fa-times"></i>
+            </button>
+            <button id="doneButton" onclick="doneButton()">
+              <i class="fas fa-check"></i>
+            </button>
+          </div>
+        </div>
+        <!-- third category (challenge-preparation) -->
+        <div id="preparation-box">
+          <h3>
+            10 sekundová challenge o
+            <strong id="preparation-text"></strong> sekúnd
+          </h3>
+          <br />
+          <div class="spinner-border text-danger"></div>
+        </div>
+        <!-- challenge -->
+        <div id="challenge-container">
+          <h2 id="challenge-text"></h2>
+          <div class="progress-container">
+            <div class="progress">
+              <div class="progress-bar bg-danger"></div>
+            </div>
+            <button class="challenge-complete-button">
+              <i class="far fa-hand-pointer"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- cube -->
+      <canvas id="cube" width="200" height="200"></canvas>
+      <button onclick="muteFunction()" id="mute-button">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <button onclick="muteFunction()" id="unmute-button">
+        <i class="fas fa-volume-mute"></i>
+      </button>
     </div>
-    <script src="audio.js"></script>
-    <script src="drink.js"></script>
-    <script src="gameplay.js"></script>
-    <script src="cube.js"></script>
-    <script src="database.js"></script>
-</body>
+    <script defer src="database.js"></script>
+    <script defer src="audio.js"></script>
+    <script defer src="drink.js"></script>
+    <script defer src="gameplay.js"></script>
+    <script defer src="cube.js"></script>
+  </body>
 </html>
